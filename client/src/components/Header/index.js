@@ -18,6 +18,17 @@ function Header () {
                 return <Dashboard/>;
         }
     };
+    return (
+        <div>
+            <Nav
+                currentPage= {currentPage}
+                handlePageChange= {handlePageChange}
+            />
+            <main>
+                <div>{renderPage(currentPage)}</div>
+            </main>
+        </div>
+    )
 }
 
 export default Header;
