@@ -28,7 +28,7 @@ function Header () {
                 <div>{renderPage(currentPage)}</div>
             </main>
         </div>
-    )
+    );
 }
 
 export default Header;
