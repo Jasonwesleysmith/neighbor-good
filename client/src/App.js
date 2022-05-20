@@ -1,6 +1,6 @@
 import './App.css';
-import Job from './components/Job';
 import Modal from './components/Modal'
+import UnclaimedJobs from './components/UnclaimedJobs/UnclaimedJobs';
 
 const jobs = [
   {id: 0, claimed: false, claimedBy: null, job:"Drummer", pay:"5", name:"Ben", phone:"5555555", location:"Grad party", description:"Party Music", info:""},
@@ -8,14 +8,11 @@ const jobs = [
   {id: 2, claimed: false, claimedBy: null, job:"Coffee Table moved", pay:"5", name:"Joe", phone:"5553333", location:"Joes house", description:"move my coffee table", info:"move downstairs"},
 ]
 
-function App() {
+const App = () => {
+  //api call
   return (
     <>
-      {jobs.map((job) => (
-        <Job job={job.job} pay={job.pay} name={job.name} phone={job.phone} location={job.location} description={job.description} info={job.info} />
-
-      ) )}
-      
+      <UnclaimedJobs jobs={jobs} />
     </>
   );
 }
