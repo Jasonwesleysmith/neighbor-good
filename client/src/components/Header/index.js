@@ -10,7 +10,7 @@ function Header () {
         switch (currentPage) {
             case "Dashboard":
                 return <Dashboard/>;
-            case "Claimed":
+            case "ClaimedJobs":
                 return <ClaimedJobs/>;
             case "UnclaimedJobs":
                 return <UnclaimedJobs/>;

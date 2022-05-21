@@ -16,4 +16,4 @@ const ClaimedJobs = ({jobs}) => {
     )
 }
 
-export default ClaimedJobs
+export default ClaimedJobs;
