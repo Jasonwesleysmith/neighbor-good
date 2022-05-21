@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Job = (props) => {
-   const {id, claimed, claimedBy, job, pay, date, name, phone, location, description, info} = props;
+   const {id, claimed, claimedBy, job, pay, date, time, name, phone, location, description, info} = props;
 
    const claimJob = (id) => {
       console.log(id)
@@ -13,7 +13,8 @@ const Job = (props) => {
       <div className='goodJob'><span className='title'>Good Job: </span>{job}</div>
         <ul>
           <li><span className='title'>Pay: </span>{pay}</li>
-          <li><span className='title'>Date & Time: </span>{date}</li>
+          <li><span className='title'>Date: </span>{date}</li>
+          <li><span className='title'>Time: </span>{time}</li>
           <li><span className='title'>Name: </span>{name}</li>
           <li><span className='title'>Phone number: </span>{phone}</li>
           <li><span className='title'>Location: </span>{location}</li>

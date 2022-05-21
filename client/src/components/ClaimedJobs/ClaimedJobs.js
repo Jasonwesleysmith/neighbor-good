@@ -10,7 +10,7 @@ const ClaimedJobs = ({jobs}) => {
       <>
       <h2>My Jobs</h2>
       {jobs.map((job) => (
-        job.claimed && job.claimedBy === currentUser && <Job id={job.id} claimed={job.claimed} claimedBy={job.claimedBy} job={job.job} pay={job.pay} date={job.date} name={job.name} phone={job.phone} location={job.location} description={job.description} info={job.info} />
+        job.claimed && job.claimedBy === currentUser && <Job id={job.id} claimed={job.claimed} claimedBy={job.claimedBy} job={job.job} pay={job.pay} date={job.date} time={job.time} name={job.name} phone={job.phone} location={job.location} description={job.description} info={job.info} />
       ) )}
       </>
     )
