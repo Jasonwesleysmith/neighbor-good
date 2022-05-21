@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Dashboard from "../Dashboard";
-import Claimed from "../Claimed";
-import Unclaimed from "../Unclaimed"
+import ClaimedJobs from "../ClaimedJobs";
+import UnclaimedJobs from "../UnclaimedJobs"
 import Nav from "../Nav";
 
 function Header () {
@@ -10,10 +10,10 @@ function Header () {
         switch (currentPage) {
             case "Dashboard":
                 return <Dashboard/>;
-            case "Claimed":
-                return <Claimed/>;
-            case "Unclaimed":
-                return <Unclaimed/>;
+            case "ClaimedJobs":
+                return <ClaimedJobs/>;
+            case "UnclaimedJobs":
+                return <UnclaimedJobs/>;
             default:
                 return <Dashboard/>;
         }
