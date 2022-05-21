@@ -5,9 +5,9 @@ function Dashboard() {
   
     return (
         <DashboardStyled>
-            <h1 className="title">Dashboard</h1>
+            <h1>Dashboard</h1>
             <div>
-                <h2>New Job</h2>
+                <h2 className="title">New Job</h2>
                 <a className="button" href="../Job" target="_blank" rel="noreferrer">
                     <span>New Job</span>
                 </a>
@@ -30,8 +30,7 @@ const DashboardStyled = styled.section `
   text-align: center;
 
   h1{
-    font-size: 2.5em;
-
+    font-size: 3.5em;
   }
   .title {
     font-size: 1.5em;
