@@ -9,7 +9,7 @@ const UnclaimedJobs = ({jobs}) => {
       <>
       <h2>Unclaimed Jobs</h2>
       {jobs.map((job) => (
-        <Job job={job.job} pay={job.pay} name={job.name} phone={job.phone} location={job.location} description={job.description} info={job.info} />
+        !job.claimed && <Job id={job.id} claimed={job.claimed} claimedBy={job.claimedBy} job={job.job} pay={job.pay} name={job.name} phone={job.phone} location={job.location} description={job.description} info={job.info} />
       ) )}
       </>
     )
