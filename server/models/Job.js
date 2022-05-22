@@ -5,6 +5,12 @@ const jobSchema = new Schema({
     type: Number,
     required: true,
   },
+  date: {
+    type: Date,
+  },
+  time: {
+    type: String,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
