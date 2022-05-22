@@ -1,5 +1,6 @@
 //import Modal from './components/Modal'
 import Header from './components/Header';
+// import Nav from './components/Nav';
 import Footer from './components/Footer';
 
 // const jobs = [
@@ -14,10 +15,11 @@ const App = () => {
   //api call
   return (
     <>
+      {/* <Nav /> */}
       <Header />
       <Footer />
     </>
   );
-}
+};
 
 export default App;
