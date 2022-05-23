@@ -74,7 +74,6 @@ const App = () => {
   return (
     <>
       <ApolloProvider client={client}>
-        {/* <Navbar /> */}
         <Router>
           <Header />
           <Routes>

@@ -23,6 +23,7 @@ const AppNavbar = () => {
               <Nav.Link as={Link} to="/">
                 Search For Jobs
               </Nav.Link>
+              {/* <br /> */}
 
               {Auth.loggedIn() ? (
                 <>
