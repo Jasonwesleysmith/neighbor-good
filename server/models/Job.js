@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const jobSchema = new Schema({
   pay: {
-    type: Number,
+    type: String,
     required: true,
   },
   date: {
