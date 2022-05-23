@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
+import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
 
@@ -17,6 +18,7 @@ const SignupForm = () => {
   const [validated] = useState(false);
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
+  console.log(userFormData);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -53,6 +55,9 @@ const SignupForm = () => {
   return (
     <>
       {/* This is needed for the validation functionality above */}
+      <h2>
+        <Link to="/login">Log in</Link> instead
+      </h2>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         {/* show alert if server response is bad */}
         <Alert

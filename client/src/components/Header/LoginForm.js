@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '../../utils/mutations';
+import { Link } from 'react-router-dom';
 
-// import { loginUser } from '../utils/API';
 import Auth from '../../utils/auth';
 
 const LoginForm = () => {
@@ -46,7 +46,10 @@ const LoginForm = () => {
 
   return (
     <>
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+      <h2>
+        <Link to="/signup">Sign up</Link> instead
+      </h2>
+      <Form noValidate validated={validated} /* onSubmit={handleFormSubmit} */>
         <Alert
           dismissible
           onClose={() => setShowAlert(false)}

@@ -1,34 +1,45 @@
 import React, { useState } from 'react';
-import Dashboard from '../Dashboard';
-import ClaimedJobs from '../ClaimedJobs';
-import UnclaimedJobs from '../UnclaimedJobs';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
-// import Nav from '../Nav';
-
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 
 import Auth from '../../utils/auth';
 
-function Header() {
-  const [currentPage, handlePageChange] = useState('Dashboard');
+const AppNavbar = () => {
+  // set modal display state
   const [showModal, setShowModal] = useState(false);
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'Dashboard':
-        return <Dashboard />;
-      case 'ClaimedJobs':
-        return <ClaimedJobs />;
-      case 'UnclaimedJobs':
-        return <UnclaimedJobs />;
-      default:
-        return <Dashboard />;
-    }
-  };
+
   return (
-    <div>
-      <Nav currentPage={currentPage} handlePageChange={handlePageChange} />
+    <>
+      <Navbar bg="dark" variant="dark" expand="lg">
+        <Container fluid>
+          <Navbar.Brand as={Link} to="/">
+            neighbor:good
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbar" />
+          <Navbar.Collapse id="navbar">
+            <Nav className="ml-auto">
+              <Nav.Link as={Link} to="/">
+                Search For Jobs
+              </Nav.Link>
+
+              {Auth.loggedIn() ? (
+                <>
+                  <Nav.Link as={Link} to="/saved">
+                    See Your Jobs
+                  </Nav.Link>
+                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                </>
+              ) : (
+                <Nav.Link as={Link} to="/login">
+                  Login/Sign Up
+                </Nav.Link>
+              )}
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
       {/* set modal data up */}
       <Modal
         size="lg"
@@ -36,34 +47,6 @@ function Header() {
         onHide={() => setShowModal(false)}
         aria-labelledby="signup-modal"
       >
-        <Navbar bg="dark" variant="dark" expand="lg">
-          <Container fluid>
-            <Navbar.Brand as={Link} to="/">
-              Google Books Search
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbar" />
-            <Navbar.Collapse id="navbar">
-              <Nav className="ml-auto">
-                <Nav.Link as={Link} to="/">
-                  Search For Books
-                </Nav.Link>
-                {/* if user is logged in show saved books and logout */}
-                {Auth.loggedIn() ? (
-                  <>
-                    <Nav.Link as={Link} to="/saved">
-                      See Your Books
-                    </Nav.Link>
-                    <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
-                  </>
-                ) : (
-                  <Nav.Link onClick={() => setShowModal(true)}>
-                    Login/Sign Up
-                  </Nav.Link>
-                )}
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
         {/* tab container to do either signup or login component */}
         <Tab.Container defaultActiveKey="login">
           <Modal.Header closeButton>
@@ -90,11 +73,8 @@ function Header() {
           </Modal.Body>
         </Tab.Container>
       </Modal>
-      <main>
-        <div>{renderPage(currentPage)}</div>
-      </main>
-    </div>
+    </>
   );
-}
+};
 
-export default Header;
+export default AppNavbar;
