@@ -8,7 +8,7 @@ function Dashboard() {
             <h1>Dashboard</h1>
             <div>
                 <h2 className="title">New Job</h2>
-                <a className="button" href="../Job" target="_blank" rel="noreferrer">
+                <a className="button" href="../Job/index.js" target="_blank" rel="noreferrer">
                     <span>New Job</span>
                 </a>
             </div>
