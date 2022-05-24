@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Form from 'react-bootstrap/Form'
 
 const Job = (props) => {
   const {
@@ -20,6 +21,8 @@ const Job = (props) => {
   const claimJob = (id) => {
     console.log(id);
     //use this id to make api call to claim job
+    // mutation, hit create endpoint
+    // use hook from utils file to post to database
   };
   return (
     <JobStyled>
