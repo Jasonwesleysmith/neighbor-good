@@ -6,7 +6,7 @@ const jobSchema = new Schema({
     required: true,
   },
   date: {
-    type: Date,
+    type: String,
   },
   time: {
     type: String,
