@@ -19,8 +19,8 @@ const AppNavbar = () => {
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbar" />
             <Navbar.Collapse id="navbar">
-              <Nav className="ml-auto">
-                <Nav.Link as={Link} to="/">
+              <Nav className="ms-auto">
+                <Nav.Link as={Link} to="/UnclaimedJob">
                   Unclaimed Jobs
                   <br />
                 </Nav.Link>
@@ -55,7 +55,7 @@ const HeaderStyled = styled.section`
   .title {
     align-items: left;
     font-size: 2em;
-    font-style: bold !important;
+    font-weight: bold;
   }
 `;
 

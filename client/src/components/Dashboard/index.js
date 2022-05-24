@@ -16,13 +16,13 @@ function Dashboard() {
       <h1>Neighborhood Jobs Dashboard</h1>
       <div>
         <h2 className="title">Post a new job here:</h2>
-        <a className="button" onClick={()=> navigate("/job")}>
+        <a className="button" onClick={()=> navigate("/Job")}>
           <span>New Job</span>
         </a>
       </div>
       <div>
         <h2 className="title">View all jobs here:</h2>
-        <a className="button" href="../UnclaimedJobs">
+        <a className="button" onClick={()=> navigate("/UnclaimedJob")}>
           <span>Unclaimed Jobs</span>
         </a>
       </div>

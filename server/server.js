@@ -18,14 +18,21 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
 
   server.applyMiddleware({ app });
 
-  if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "../client/build")));
-  }
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
+
+  // if (process.env.NODE_ENV === "production") {
+  //   app.use(express.static(path.join(__dirname, "../client/build")));
+  // }
 
   db.once("open", () => {
     app.listen(PORT, () => {
