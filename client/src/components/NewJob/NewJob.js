@@ -1,11 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components';
 
 const NewJob = () => {
+    const [job, setJob] = useState('')
+
+    const submitJob = () => {
+        console.log()
+    }
+
+    
   return (
     <NewJobStyled>
-        <label htmlFor="job">Good job:</label>
-        <input id="job" type="text" />
+        <label htmlFor="job">Job:</label>
+        <input value={job} onChange={(e)=> setJob(e.target.value)} id="job" type="text" />
         <label type="text" htmlFor="pay">Pay</label>
         <input id="pay" type="text"/>
         <label type="text" htmlFor="date">Date:</label>
@@ -32,10 +39,10 @@ export default NewJob
 const NewJobStyled = styled.form`
     display: flex;
     flex-direction: column;
-    /* max-width: 350px; */
-    justify-content: center;
+    align-items: center;
     input {
         margin-bottom: 1rem;
+        max-width: 350px;
     }
 `
     
