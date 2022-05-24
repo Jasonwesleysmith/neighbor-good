@@ -4,6 +4,8 @@ import Login from './components/Header/LoginForm';
 import Signup from './components/Header/SignupForm';
 import Header from './components/Header/index';
 import Footer from './components/Footer';
+import Job from './components/Job';
+import Dashboard from './components/Dashboard';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import {
@@ -80,6 +82,8 @@ const App = () => {
             <Route exact path="/" element={<UnclaimedJobs jobs={jobs} />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
+            <Route exact path="/job" element={<Job />} />
+            <Route exact path="/dashboard" element={<Dashboard />} />
           </Routes>
           <Footer />
         </Router>

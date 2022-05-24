@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import {useNavigate} from "react-router-dom";
 
 function Dashboard() {
+    const navigate = useNavigate();
   return (
     <DashboardStyled>
       <h1>Dashboard</h1>
       <div>
         <h2 className="title">New Job</h2>
-        <a className="button" href="../Job" target="_blank" rel="noreferrer">
+        <a className="button" onClick={()=> navigate("/job")} target="_blank" rel="noreferrer">
           <span>New Job</span>
         </a>
       </div>
