@@ -90,17 +90,17 @@ const LoginForm = () => {
               Password is required!
             </Form.Control.Feedback>
           </Form.Group>
+          <h6>
+            <Link to="/signup">Sign up</Link> instead
+          </h6>
           <Button
             disabled={!(userFormData.email && userFormData.password)}
             type="submit"
             variant="success"
-            onClick={()=> navigate("/dashboard")}
+            onClick={() => navigate('/dashboard')}
           >
             Submit
           </Button>
-          <h5>
-            <Link to="/signup">Sign up</Link> instead
-          </h5>
         </Form>
       </Container>
     </>

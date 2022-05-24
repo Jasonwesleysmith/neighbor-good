@@ -112,6 +112,9 @@ const SignupForm = () => {
               Password is required!
             </Form.Control.Feedback>
           </Form.Group>
+          <h6>
+            <Link to="/login">Log in</Link> instead
+          </h6>
           <Button
             disabled={
               !(
@@ -125,9 +128,6 @@ const SignupForm = () => {
           >
             Submit
           </Button>
-          <h5>
-            <Link to="/login">Log in</Link> instead
-          </h5>
         </Form>
       </Container>
     </>
