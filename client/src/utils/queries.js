@@ -9,3 +9,9 @@ export const QUERY_ME = gql`
     }
   }
 `;
+export const JOBS = gql`
+  //
+`;
+export const UNCLAIMED_JOBS = gql`
+  //
+`;

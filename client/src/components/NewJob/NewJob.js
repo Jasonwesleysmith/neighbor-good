@@ -1,35 +1,51 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
+import { useMutation } from '@apollo/client';
 
 const NewJob = () => {
-    const [job, setJob] = useState('')
+    // const [addJob] = useMutation(ADD_JOB);
+    const [jobData, setJobData] = useState({
+        job: '',
+        pay: '',
+        date: '',
+        time: '',
+        name: '',
+        phone: '',
+        location: '',
+        description: '',
+        info: '',
+    })
 
-    const submitJob = () => {
-        console.log()
+    const submitJob = (e) => {
+        e.preventDefault()
+        //submit data w api call
+        //clear form if stay on same page
+        //or navigate to my jobs or dashboard
+        console.log(jobData)
     }
 
     
   return (
     <NewJobStyled>
         <label htmlFor="job">Job:</label>
-        <input value={job} onChange={(e)=> setJob(e.target.value)} id="job" type="text" />
+        <input value={jobData.job} onChange={(e)=> setJobData({...jobData, job: e.target.value})} id="job" type="text" />
         <label type="text" htmlFor="pay">Pay</label>
-        <input id="pay" type="text"/>
+        <input value={jobData.pay} onChange={(e)=> setJobData({...jobData, pay: e.target.value})} id="pay" type="text"/>
         <label type="text" htmlFor="date">Date:</label>
-        <input id="date" type="text" />
+        <input value={jobData.date} onChange={(e)=> setJobData({...jobData, date: e.target.value})} id="date" type="text" />
         <label type="text" htmlFor="time">Time:</label>
-        <input id="time" type="text" />
+        <input value={jobData.time} onChange={(e)=> setJobData({...jobData, time: e.target.value})} id="time" type="text" />
         <label type="text" htmlFor="name">Name:</label>
-        <input id="name" type="text" />
+        <input value={jobData.name} onChange={(e)=> setJobData({...jobData, name: e.target.value})} id="name" type="text" />
         <label type="text" htmlFor="phone">Phone number:</label>
-        <input id="phone" type="text" />
+        <input value={jobData.phone} onChange={(e)=> setJobData({...jobData, phone: e.target.value})} id="phone" type="text" />
         <label type="text" htmlFor="location">Location:</label>
-        <input id="location" type="text" />
+        <input value={jobData.location} onChange={(e)=> setJobData({...jobData, location: e.target.value})} id="location" type="text" />
         <label type="text" htmlFor="description">Description of Job:</label>
-        <input id="description" type="text" />
+        <input value={jobData.description} onChange={(e)=> setJobData({...jobData, description: e.target.value})} id="description" type="text" />
         <label type="text" htmlFor="additional">Additional info:</label>
-        <input id="additional" type="text" />
-        <button>Create Job</button>
+        <input value={jobData.info} onChange={(e)=> setJobData({...jobData, info: e.target.value})} id="additional" type="text" />
+        <button onClick={submitJob}>Create Job</button>
     </NewJobStyled>
   )
 }

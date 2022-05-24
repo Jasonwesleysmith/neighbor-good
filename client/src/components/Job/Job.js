@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Form from 'react-bootstrap/Form'
+import { useMutation } from '@apollo/client';
 
 const Job = (props) => {
   const {
@@ -18,8 +18,12 @@ const Job = (props) => {
     info,
   } = props;
 
+  // const [claimJob] = useMutation(CLAIM_JOB);
+  const [me] = useMutation(QUERY_JOB);
+
   const claimJob = (id) => {
     console.log(id);
+    claimJob(id, log)
     //use this id to make api call to claim job
     // mutation, hit create endpoint
     // use hook from utils file to post to database
