@@ -1,27 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 import {useNavigate} from "react-router-dom";
+import { useMutation } from '@apollo/client';
+import {QUERY_ME} from '../../utils/queries';
+import Job from '../Job';
 
 function Dashboard() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  // const [me] = useMutation(QUERY_ME);
+  
+  //list all jobs
+  //list my jobs
   return (
     <DashboardStyled>
-      <h1>Dashboard</h1>
+      <h1>Job Dashboard</h1>
       <div>
-        <h2 className="title">New Job</h2>
+        <h2 className="title">Post a new job here:</h2>
         <a className="button" onClick={()=> navigate("/job")}>
           <span>New Job</span>
         </a>
       </div>
       <div>
-        <h2 className="title">All Jobs</h2>
-        <a
-          className="button"
-          href="../UnclaimedJobs"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span>Open Jobs</span>
+        <h2 className="title">View all jobs here:</h2>
+        <a className="button" href="../UnclaimedJobs">
+          <span>Unclaimed Jobs</span>
         </a>
       </div>
     </DashboardStyled>
@@ -39,13 +41,18 @@ const DashboardStyled = styled.section`
   }
   .title {
     font-size: 1.5em;
+    padding: 3rem;
   }
 
   .button {
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    border-radius: 3px;
+    border-radius: 3rem;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 1rem;
+    color: #fff;
+    background-color: #555;
 
     /* Color the border and text with theme.main */
     color: ${(props) => props.theme.main};

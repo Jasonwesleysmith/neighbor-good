@@ -59,6 +59,7 @@ const NewJobStyled = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     input {
         margin-bottom: 1rem;
         max-width: 350px;
