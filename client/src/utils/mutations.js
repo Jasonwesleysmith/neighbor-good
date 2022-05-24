@@ -25,3 +25,19 @@ export const LOGIN = gql`
     }
   }
 `;
+
+// export const ADD_JOB = gql`
+// mutation addJob
+
+
+
+
+// `
+
+// export const CLAIM_JOB = gql`
+// mutation claimJob
+
+
+
+
+// `

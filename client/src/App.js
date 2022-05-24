@@ -5,6 +5,7 @@ import Signup from './components/Header/SignupForm';
 import Header from './components/Header/index';
 import Footer from './components/Footer';
 import Job from './components/Job';
+import NewJob from './components/NewJob';
 import Dashboard from './components/Dashboard';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -82,7 +83,7 @@ const App = () => {
             <Route exact path="/" element={<UnclaimedJobs jobs={jobs} />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
-            <Route exact path="/job" element={<Job />} />
+            <Route exact path="/job" element={<NewJob />} />
             <Route exact path="/dashboard" element={<Dashboard />} />
           </Routes>
           <Footer />
