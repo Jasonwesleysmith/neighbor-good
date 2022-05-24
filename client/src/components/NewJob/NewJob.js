@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
 import { useMutation } from '@apollo/client';
+import {useNavigate} from "react-router-dom";
 
 const NewJob = () => {
+    const navigate = useNavigate();
     // const [addJob] = useMutation(ADD_JOB);
     const [jobData, setJobData] = useState({
         job: '',
@@ -22,6 +24,7 @@ const NewJob = () => {
         //clear form if stay on same page
         //or navigate to my jobs or dashboard
         console.log(jobData)
+        navigate("/dashboard")
     }
 
     

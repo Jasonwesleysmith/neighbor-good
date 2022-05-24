@@ -9,7 +9,7 @@ function Dashboard() {
       <h1>Dashboard</h1>
       <div>
         <h2 className="title">New Job</h2>
-        <a className="button" onClick={()=> navigate("/job")} target="_blank" rel="noreferrer">
+        <a className="button" onClick={()=> navigate("/job")}>
           <span>New Job</span>
         </a>
       </div>

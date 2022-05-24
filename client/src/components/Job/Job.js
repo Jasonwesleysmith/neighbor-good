@@ -31,7 +31,7 @@ const Job = (props) => {
   return (
     <JobStyled>
       <div className="goodJob">
-        <span className="title">Good Job: </span>
+        <span className="title">Job: </span>
         {job}
       </div>
       <ul>
