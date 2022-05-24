@@ -32,7 +32,7 @@ const NewJob = () => {
     <NewJobStyled>
         <label htmlFor="job">Job:</label>
         <input value={jobData.job} onChange={(e)=> setJobData({...jobData, job: e.target.value})} id="job" type="text" />
-        <label type="text" htmlFor="pay">Pay</label>
+        <label type="text" htmlFor="pay">Pay:</label>
         <input value={jobData.pay} onChange={(e)=> setJobData({...jobData, pay: e.target.value})} id="pay" type="text"/>
         <label type="text" htmlFor="date">Date:</label>
         <input value={jobData.date} onChange={(e)=> setJobData({...jobData, date: e.target.value})} id="date" type="text" />
@@ -59,10 +59,30 @@ const NewJobStyled = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 18px;
+    font-weight: bold;
     
     input {
-        margin-bottom: 1rem;
+        margin-top: 3px;
+        font-size: 2rem;
+        margin-bottom: 3px;
         max-width: 350px;
+        border-radius: 5px;
+    }
+
+    button {
+    border-radius: 3rem;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 1rem;
+    padding: 1rem;
+    color: #fff;
+    background-color: #555;
     }
 `
     
+    
+    
+    
+

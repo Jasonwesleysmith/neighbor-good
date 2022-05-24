@@ -47,6 +47,7 @@ const UnclaimedJobsStyled = styled.div`
     padding: 2rem;
     font-size: 22;
     font-weight: bold;
+    
   }
 `
 

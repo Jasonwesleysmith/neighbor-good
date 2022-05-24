@@ -1,3 +1,9 @@
+html {
+  border-top: 3px;
+  
+
+}
+
 
 body {
   margin: 0;
@@ -6,7 +12,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: skyblue;
+  background-image: url("./images/skypicture.png");
+  background-repeat: no-repeat;
+  /* background-color: skyblue; */
+  /* border-top: 3px;
+  border-color: darkred; */
 }
 
 code {

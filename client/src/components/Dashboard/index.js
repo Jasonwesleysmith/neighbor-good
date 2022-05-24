@@ -13,7 +13,7 @@ function Dashboard() {
   //list my jobs
   return (
     <DashboardStyled>
-      <h1>Job Dashboard</h1>
+      <h1>Neighborhood Jobs Dashboard</h1>
       <div>
         <h2 className="title">Post a new job here:</h2>
         <a className="button" onClick={()=> navigate("/job")}>

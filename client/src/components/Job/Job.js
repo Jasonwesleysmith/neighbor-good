@@ -77,11 +77,12 @@ const Job = (props) => {
 
 const JobStyled = styled.section`
   padding: 3rem;
-  background-color: #3bb57533;
+  background-color: #7DC967;
   margin: 1rem;
   border-radius: 1rem;
   max-width: 500px;
   min-height: 400px;
+  box-shadow: 4px 2px 2px grey;
   .title {
     font-weight: bold;
   }
