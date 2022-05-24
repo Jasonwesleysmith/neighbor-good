@@ -1,5 +1,6 @@
-const { User, Book, Job } = require("../models");
+const { User, Job } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -21,7 +22,7 @@ const resolvers = {
       return Job.find(params);
     },
     // get one job
-    job: async (parent, { _id }) => {
+    jobs: async (parent, { _id }) => {
       return Job.findOne({ _id });
     },
     // get all users
