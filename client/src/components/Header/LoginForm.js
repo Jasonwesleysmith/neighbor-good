@@ -1,10 +1,11 @@
 // see SignupForm.js for comments
 import React, { useState } from 'react';
-import { Form, Container } from 'react-bootstrap';
+import { Form, Container, Card } from 'react-bootstrap';
 import { Button, Alert } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '../../utils/mutations';
 import { useNavigate, Link } from 'react-router-dom';
+// import styled from 'styled-components';
 
 import Auth from '../../utils/auth';
 
@@ -49,59 +50,63 @@ const LoginForm = () => {
   return (
     <>
       <Container>
-        <Form
-          noValidate
-          validated={validated} /* onSubmit={handleFormSubmit} */
-        >
-          <Alert
-            dismissible
-            onClose={() => setShowAlert(false)}
-            show={showAlert}
-            variant="danger"
+        <Card style={{ width: '30rem' }} className="bg-white mt-4 mx-auto">
+          <Form
+            style={{ width: '25rem', margin: '2rem', padding: 'pt-2rem' }}
+            noValidate
+            validated={validated} /* onSubmit={handleFormSubmit} */
           >
-            Something went wrong with your login credentials!
-          </Alert>
-          <Form.Group className="mb-3">
-            <Form.Label htmlFor="email">Email</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Your email"
-              name="email"
-              onChange={handleInputChange}
-              value={userFormData.email}
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              Email is required!
-            </Form.Control.Feedback>
-          </Form.Group>
+            <Alert
+              dismissible
+              onClose={() => setShowAlert(false)}
+              show={showAlert}
+              variant="danger"
+            >
+              Something went wrong with your login credentials!
+            </Alert>
+            <h2 class="card-title text-center mb-4 ">Log In</h2>
+            <Form.Group className="mt-3">
+              <Form.Label htmlFor="email">Email</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Your email"
+                name="email"
+                onChange={handleInputChange}
+                value={userFormData.email}
+                required
+              />
+              <Form.Control.Feedback type="invalid">
+                Email is required!
+              </Form.Control.Feedback>
+            </Form.Group>
 
-          <Form.Group className="mb-3">
-            <Form.Label htmlFor="password">Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Your password"
-              name="password"
-              onChange={handleInputChange}
-              value={userFormData.password}
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              Password is required!
-            </Form.Control.Feedback>
-          </Form.Group>
-          <h6>
-            <Link to="/signup">Sign up</Link> instead
-          </h6>
-          <Button
-            disabled={!(userFormData.email && userFormData.password)}
-            type="submit"
-            variant="success"
-            onClick={() => navigate('/dashboard')}
-          >
-            Submit
-          </Button>
-        </Form>
+            <Form.Group className="mt-3">
+              <Form.Label htmlFor="password">Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Your password"
+                name="password"
+                onChange={handleInputChange}
+                value={userFormData.password}
+                required
+              />
+              <Form.Control.Feedback type="invalid">
+                Password is required!
+              </Form.Control.Feedback>
+            </Form.Group>
+            <h6 className="mt-2">
+              <Link to="/signup">Sign up</Link> instead
+            </h6>
+            <Button
+              disabled={!(userFormData.email && userFormData.password)}
+              type="submit"
+              variant="success"
+              onClick={() => navigate('/dashboard')}
+            >
+              Submit
+            </Button>
+          </Form>
+        </Card>
       </Container>
     </>
   );

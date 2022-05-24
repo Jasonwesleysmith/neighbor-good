@@ -29,5 +29,5 @@ const FooterStyled = styled.footer`
   background-color: white;
   padding-left: 2rem;
   padding-bottom: 1rem;
-  padding-top: 1rem;
+  padding-top: 1rem; ;
 `;
