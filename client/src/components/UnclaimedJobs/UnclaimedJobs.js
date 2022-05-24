@@ -45,6 +45,8 @@ const UnclaimedJobsStyled = styled.div`
   h2 {
     justify-content: center;
     padding: 2rem;
+    font-size: 22;
+    font-weight: bold;
   }
 `
 
