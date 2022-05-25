@@ -20,7 +20,7 @@ const AppNavbar = () => {
             <Navbar.Toggle aria-controls="navbar" />
             <Navbar.Collapse id="navbar">
               <Nav className="ms-auto">
-                <Nav.Link as={Link} to="/">
+                <Nav.Link as={Link} to="/UnclaimedJob">
                   Unclaimed Jobs
                   <br />
                 </Nav.Link>

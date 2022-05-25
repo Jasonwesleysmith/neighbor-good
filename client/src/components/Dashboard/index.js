@@ -16,6 +16,7 @@ function Dashboard() {
   return (
     <DashboardStyled>
       <h1>Neighborhood Jobs Dashboard</h1>
+
       <CardGroup>
         <Card
           style={{ width: '18rem' }}
@@ -39,6 +40,7 @@ function Dashboard() {
           </div>
         </Card>
       </CardGroup>
+
     </DashboardStyled>
   );
 }
