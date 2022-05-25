@@ -18,7 +18,6 @@ const SignupForm = () => {
   const [validated] = useState(false);
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
-  console.log(userFormData);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -36,10 +35,15 @@ const SignupForm = () => {
     }
 
     try {
-      const { data } = await addUser({ variables: { ...userFormData } });
+      const response = await addUser({
+        variables: {
+          email: userFormData.email,
+          username: userFormData.username,
+          password: userFormData.password,
+        },
+      });
 
-      // console.log(data);
-      Auth.login(data.addUser.token);
+      Auth.login(response.data.addUser.token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
@@ -76,7 +80,7 @@ const SignupForm = () => {
             >
               Something went wrong with your signup!
             </Alert>
-            <h2 class="card-title text-center mb-4">Sign Up</h2>
+            <h2 className="card-title text-center mb-4">Sign Up</h2>
             <Form.Group>
               <Form.Label htmlFor="username">Username</Form.Label>
               <Form.Control
@@ -92,7 +96,7 @@ const SignupForm = () => {
               </Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group class="mt-3">
+            <Form.Group className="mt-3">
               <Form.Label htmlFor="email">Email</Form.Label>
               <Form.Control
                 type="email"
@@ -132,7 +136,7 @@ const SignupForm = () => {
                   userFormData.password
                 )
               }
-              class="font-weight-bold"
+              className="font-weight-bold"
               type="submit"
               variant="success"
             >

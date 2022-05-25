@@ -32,9 +32,14 @@ const LoginForm = () => {
     }
 
     try {
-      const { data } = await login({ variables: { ...userFormData } });
+      const response = await login({
+        variables: {
+          email: userFormData.email,
+          password: userFormData.password,
+        },
+      });
 
-      Auth.login(data.login.token);
+      Auth.login(response.data.login.token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
@@ -57,7 +62,8 @@ const LoginForm = () => {
           <Form
             style={{ width: '25rem', margin: '2rem', padding: 'pt-2rem' }}
             noValidate
-            validated={validated} /* onSubmit={handleFormSubmit} */
+            validated={validated}
+            onSubmit={handleFormSubmit}
           >
             <Alert
               dismissible
@@ -67,7 +73,7 @@ const LoginForm = () => {
             >
               Something went wrong with your login credentials!
             </Alert>
-            <h2 class="card-title text-center mb-4 ">Log In</h2>
+            <h2 className="card-title text-center mb-4 ">Log In</h2>
             <Form.Group className="mt-3">
               <Form.Label htmlFor="email">Email</Form.Label>
               <Form.Control
