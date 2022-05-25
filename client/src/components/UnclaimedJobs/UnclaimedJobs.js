@@ -1,6 +1,6 @@
 import React from 'react';
 import Job from '../Job';
-import { useMutation } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { UNCLAIMED_JOBS } from '../../utils/queries';
 import styled from 'styled-components';
 
@@ -9,13 +9,13 @@ const jobs = [
     id: 0,
     claimed: false,
     claimedBy: null,
-    job: 'Drummer',
-    pay: '5',
+    job: 'Handyman',
+    pay: '500',
     name: 'Ben',
     phone: '5555555',
-    location: 'Grad party',
-    description: 'Party Music',
-    info: '',
+    location: 'My Basement',
+    description: 'Drywall a closet and move outlet',
+    info: 'turn off breaker before work',
   },
   {
     id: 1,
@@ -43,8 +43,8 @@ const jobs = [
   },
 ];
 
-const UnclaimedJobs = ({ jobs }) => {
-  // const [unclaimedJobs] = useMutation(UNCLAIMED_JOBS);
+const UnclaimedJobs = () => {
+  // const [unclaimedJobs] = useQuery(UNCLAIMED_JOBS);
   return (
     <UnclaimedJobsStyled>
       <h2>Unclaimed Jobs</h2>

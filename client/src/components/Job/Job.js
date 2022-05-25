@@ -21,9 +21,9 @@ const Job = (props) => {
 
   // const [claimJob] = useMutation(CLAIM_JOB);
 
-  const claimJob = (id) => {
+  const handleClaimJob = (id) => {
     console.log(id);
-    claimJob(id);
+    // claimJob(id);
     //use this id to make api call to claim job
     // mutation, hit create endpoint
     // use hook from utils file to post to database
@@ -68,7 +68,7 @@ const Job = (props) => {
           {info}
         </li>
       </ul>
-      <button onClick={() => claimJob(id)}>Claim Job</button>
+      <button onClick={() => handleClaimJob(id)}>Claim Job</button>
     </JobStyled>
   );
 };
