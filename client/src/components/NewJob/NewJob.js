@@ -43,7 +43,6 @@ const NewJob = () => {
     //submit data w api call
     //clear form if stay on same page
     //or navigate to my jobs or dashboard
-    return;
     navigate('/');
   };
 

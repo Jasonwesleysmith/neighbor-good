@@ -1,7 +1,7 @@
 import React from 'react';
 import Job from '../Job';
 import { useQuery } from '@apollo/client';
-import { UNCLAIMED_JOBS } from '../../utils/queries';
+import { QUERY_JOBS } from '../../utils/queries';
 import styled from 'styled-components';
 
 const jobs = [
@@ -44,30 +44,30 @@ const jobs = [
 ];
 
 const UnclaimedJobs = () => {
-  // const [unclaimedJobs] = useQuery(UNCLAIMED_JOBS);
+  const { loading, data } = useQuery(QUERY_JOBS);
+
   return (
     <UnclaimedJobsStyled>
       <h2>Unclaimed Jobs</h2>
       <div className="grid">
-        {jobs.map(
-          (job) =>
-            !job.claimed && (
-              <div key={job.id}>
+        {!loading &&
+          data.jobs.map(
+            (job) =>
+              !job.claimed && (
                 <Job
-                  id={job.id}
-                  claimed={job.claimed}
-                  claimedBy={job.claimedBy}
+                  key={job._id}
+                  id={job._id}
                   job={job.job}
                   pay={job.pay}
+                  date={job.date}
+                  time={job.time}
                   name={job.name}
-                  phone={job.phone}
+                  phone={job.phoneNumber}
                   location={job.location}
                   description={job.description}
-                  info={job.info}
                 />
-              </div>
-            )
-        )}
+              )
+          )}
       </div>
     </UnclaimedJobsStyled>
   );
