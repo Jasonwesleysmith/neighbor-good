@@ -1,7 +1,7 @@
 import React from 'react';
 import Job from '../Job';
 import { useMutation } from '@apollo/client';
-import { UNCLAIMED_JOBS} from '../../utils/queries';
+import { UNCLAIMED_JOBS } from '../../utils/queries';
 import styled from 'styled-components';
 
 const jobs = [
@@ -43,13 +43,12 @@ const jobs = [
   },
 ];
 
-
 const UnclaimedJobs = ({ jobs }) => {
   // const [unclaimedJobs] = useMutation(UNCLAIMED_JOBS);
   return (
     <UnclaimedJobsStyled>
       <h2>Unclaimed Jobs</h2>
-      <div className='grid'>
+      <div className="grid">
         {jobs.map(
           (job) =>
             !job.claimed && (
@@ -86,8 +85,7 @@ const UnclaimedJobsStyled = styled.div`
     padding: 2rem;
     font-size: 22;
     font-weight: bold;
-    
   }
-`
+`;
 
 export default UnclaimedJobs;
