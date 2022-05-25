@@ -1,13 +1,15 @@
 import React from 'react';
 import Job from '../Job';
-import { useMutation } from '@apollo/client';
-import { QUERY_ME, MY_JOBS } from '../../utils/queries';
+// import { useMutation } from '@apollo/client';
+// import { QUERY_ME, MY_JOBS } from '../../utils/queries';
 
 //get from auth
-const currentUser = 'Jason';
+const currentUser = 'currentUser';
 
-const ClaimedJobs = ({ jobs }) => {
+
+const ClaimedJobs = ({jobs}) => {
   // const [myJobs] = useMutation(MY_JOBS);
+  // console.log({jobs})
 
   return (
     <>

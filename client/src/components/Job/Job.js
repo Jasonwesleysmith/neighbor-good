@@ -17,12 +17,30 @@ const Job = (props) => {
     location,
     description,
     info,
+    jobs,
+    setJobs,
   } = props;
 
   // const [claimJob] = useMutation(CLAIM_JOB);
 
   const handleClaimJob = (id) => {
-    console.log(id);
+    // client side functionality
+    // find job that matches this id
+    const job = jobs.filter(job => job.id === id );
+    const updatedJob = {...job[0], claimedBy: 'currentUser', claimed: true}
+    const filtered = jobs.filter((job) => { 
+      return job.id !== id;
+    });
+    filtered.push(updatedJob)
+    console.log(filtered)
+
+    // console.log(jobs)
+   
+    // console.log(newJobs)
+    //edit job
+    // jobs = [...jobs, updatedJob]
+
+
     // claimJob(id);
     //use this id to make api call to claim job
     // mutation, hit create endpoint

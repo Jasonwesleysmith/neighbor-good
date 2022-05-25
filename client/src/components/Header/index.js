@@ -26,18 +26,18 @@ const AppNavbar = () => {
                 </Nav.Link>
                 {/* <br /> */}
 
-                {Auth.loggedIn() ? (
+                {/* {Auth.loggedIn() ? ( */}
                   <>
-                    <Nav.Link as={Link} to="/saved">
+                    <Nav.Link as={Link} to="/claimedjobs">
                       My Jobs
                     </Nav.Link>
                     <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                   </>
-                ) : (
+                {/* ) : ( */}
                   <Nav.Link as={Link} to="/login">
                     Login/Sign Up
                   </Nav.Link>
-                )}
+                {/* )} */}
               </Nav>
             </Navbar.Collapse>
           </Container>
