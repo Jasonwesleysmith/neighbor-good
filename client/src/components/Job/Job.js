@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { useMutation } from '@apollo/client';
 // import {CLAIM_JOB} from '../../utils/queries'
 
-
 const Job = (props) => {
   const {
     id,
@@ -22,10 +21,9 @@ const Job = (props) => {
 
   // const [claimJob] = useMutation(CLAIM_JOB);
 
-
   const claimJob = (id) => {
     console.log(id);
-    claimJob(id)
+    claimJob(id);
     //use this id to make api call to claim job
     // mutation, hit create endpoint
     // use hook from utils file to post to database
@@ -77,7 +75,7 @@ const Job = (props) => {
 
 const JobStyled = styled.section`
   padding: 3rem;
-  background-color: #7DC967;
+  background-color: #7dc967;
   margin: 1rem;
   border-radius: 1rem;
   max-width: 500px;
@@ -103,7 +101,6 @@ const JobStyled = styled.section`
     padding: 1rem;
     color: #fff;
     background-color: #555;
-
   }
 `;
 

@@ -86,7 +86,7 @@ const App = () => {
             <Route exact path="/job" element={<NewJob />} />
             <Route exact path="/unclaimedjobs" element={<UnclaimedJobs />} />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </Router>
       </ApolloProvider>
     </>

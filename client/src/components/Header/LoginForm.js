@@ -50,7 +50,10 @@ const LoginForm = () => {
   return (
     <>
       <Container>
-        <Card style={{ width: '30rem' }} className="bg-white mt-4 mx-auto">
+        <Card
+          style={{ width: '30rem' }}
+          className="shadow-lg bg-white mt-5 mx-auto"
+        >
           <Form
             style={{ width: '25rem', margin: '2rem', padding: 'pt-2rem' }}
             noValidate
