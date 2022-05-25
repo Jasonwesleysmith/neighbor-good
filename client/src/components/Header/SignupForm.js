@@ -57,7 +57,10 @@ const SignupForm = () => {
       {/* This is needed for the validation functionality above */}
 
       <Container>
-        <Card style={{ width: '30rem' }} className="bg-white mt-4 mx-auto">
+        <Card
+          style={{ width: '30rem' }}
+          className="shadow-lg bg-white mt-5 mx-auto"
+        >
           <Form
             style={{ width: '25rem', margin: '2rem', padding: 'pt-2rem' }}
             noValidate
@@ -129,6 +132,7 @@ const SignupForm = () => {
                   userFormData.password
                 )
               }
+              class="font-weight-bold"
               type="submit"
               variant="success"
             >
