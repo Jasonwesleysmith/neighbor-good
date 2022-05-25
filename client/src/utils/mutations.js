@@ -28,17 +28,19 @@ export const LOGIN = gql`
 
 export const ADD_JOB = gql`
   mutation addJob(
+    $job: String
     $pay: String
     $date: String
     $time: String
     $name: String
     $phoneNumber: String
-    $location: String!
-    $description: String!
+    $location: String
+    $description: String
     $additionalInfo: String
     $username: String!
   ) {
     addJob(
+      job: $job
       pay: $pay
       date: $date
       time: $time

@@ -4,20 +4,8 @@ import { useMutation } from '@apollo/client';
 // import {CLAIM_JOB} from '../../utils/queries'
 
 const Job = (props) => {
-  const {
-    id,
-    claimed,
-    claimedBy,
-    job,
-    pay,
-    date,
-    time,
-    name,
-    phone,
-    location,
-    description,
-    info,
-  } = props;
+  const { id, job, pay, date, time, name, phone, location, description, info } =
+    props;
 
   // const [claimJob] = useMutation(CLAIM_JOB);
 

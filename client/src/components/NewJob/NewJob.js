@@ -3,39 +3,58 @@ import styled from 'styled-components';
 import { Form, Container, Card } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
+import { ADD_JOB } from '../../utils/mutations';
+import Auth from '../../utils/auth';
 
 const NewJob = () => {
   const navigate = useNavigate();
   // const [addJob] = useMutation(ADD_JOB);
+
   const [jobData, setJobData] = useState({
     job: '',
     pay: '',
     date: '',
     time: '',
     name: '',
-    phone: '',
+    phoneNumber: '',
     location: '',
     description: '',
-    info: '',
   });
+  console.log(jobData);
+
+  const [addJob] = useMutation(ADD_JOB);
 
   const submitJob = (e) => {
     e.preventDefault();
+    addJob({
+      variables: {
+        job: jobData.job,
+        pay: jobData.pay,
+        date: jobData.date,
+        time: jobData.time,
+        name: jobData.name,
+        phoneNumber: jobData.phoneNumber,
+        location: jobData.location,
+        description: jobData.description,
+        additionalInfo: '',
+        username: '',
+      },
+    });
     //submit data w api call
     //clear form if stay on same page
     //or navigate to my jobs or dashboard
-    console.log(jobData);
-    navigate('/dashboard');
+    return;
+    navigate('/');
   };
 
   return (
     <NewJobStyled>
       <Card style={{ width: '30rem' }} className="bg-white mt-4 mx-auto">
         <Form style={{ width: '25rem', margin: '1rem' }}>
-          <h2 class="card-title text-center mb-4">Create Job</h2>
+          <h2 className="card-title text-center mb-4">Create Job</h2>
 
           {/* JOB */}
-          <Form.Group class="mt-2">
+          <Form.Group className="mt-2">
             <Form.Label htmlFor="job">Job:</Form.Label>
             <Form.Control
               value={jobData.job}
@@ -47,11 +66,11 @@ const NewJob = () => {
           </Form.Group>
 
           {/* PAY */}
-          <Form.Group class="mt-2">
+          <Form.Group className="mt-2">
             <Form.Label htmlFor="pay">Pay:</Form.Label>
             <Form.Control
               value={jobData.pay}
-              onChange={(e) => setJobData({ ...jobData, job: e.target.value })}
+              onChange={(e) => setJobData({ ...jobData, pay: e.target.value })}
               type="text"
               id="pay"
               placeholder="Enter Pay"
@@ -59,11 +78,11 @@ const NewJob = () => {
           </Form.Group>
 
           {/* DATE */}
-          <Form.Group class="mt-2">
+          <Form.Group className="mt-2">
             <Form.Label htmlFor="date">Date:</Form.Label>
             <Form.Control
               value={jobData.date}
-              onChange={(e) => setJobData({ ...jobData, job: e.target.value })}
+              onChange={(e) => setJobData({ ...jobData, date: e.target.value })}
               type="text"
               id="date"
               placeholder="Enter Date of Job"
@@ -71,11 +90,11 @@ const NewJob = () => {
           </Form.Group>
 
           {/* TIME */}
-          <Form.Group class="mt-2">
+          <Form.Group className="mt-2">
             <Form.Label htmlFor="time">Time:</Form.Label>
             <Form.Control
               value={jobData.time}
-              onChange={(e) => setJobData({ ...jobData, job: e.target.value })}
+              onChange={(e) => setJobData({ ...jobData, time: e.target.value })}
               type="text"
               id="time"
               placeholder="Enter Time of Job"
@@ -83,23 +102,25 @@ const NewJob = () => {
           </Form.Group>
 
           {/* TIME */}
-          <Form.Group class="mt-2">
+          <Form.Group className="mt-2">
             <Form.Label htmlFor="name">Contact Name:</Form.Label>
             <Form.Control
               value={jobData.name}
-              onChange={(e) => setJobData({ ...jobData, job: e.target.value })}
+              onChange={(e) => setJobData({ ...jobData, name: e.target.value })}
               type="text"
               id="name"
               placeholder="Enter Name of Contact"
             ></Form.Control>
           </Form.Group>
 
-          {/* PHONE */}
-          <Form.Group class="mt-2">
+          {/* phoneNumber */}
+          <Form.Group className="mt-2">
             <Form.Label htmlFor="phone">Phone Number:</Form.Label>
             <Form.Control
-              value={jobData.phone}
-              onChange={(e) => setJobData({ ...jobData, job: e.target.value })}
+              value={jobData.phoneNumber}
+              onChange={(e) =>
+                setJobData({ ...jobData, phoneNumber: e.target.value })
+              }
               type="text"
               id="phone"
               placeholder="Enter Phone Number of Contact"
@@ -107,11 +128,13 @@ const NewJob = () => {
           </Form.Group>
 
           {/* LOCATION */}
-          <Form.Group class="mt-2">
+          <Form.Group className="mt-2">
             <Form.Label htmlFor="location">Location:</Form.Label>
             <Form.Control
               value={jobData.location}
-              onChange={(e) => setJobData({ ...jobData, job: e.target.value })}
+              onChange={(e) =>
+                setJobData({ ...jobData, location: e.target.value })
+              }
               type="text"
               id="location"
               placeholder="Enter Location of Job"
@@ -119,11 +142,13 @@ const NewJob = () => {
           </Form.Group>
 
           {/* DESCRIPTION */}
-          <Form.Group class="mt-2">
+          <Form.Group className="mt-2">
             <Form.Label htmlFor="description">Description:</Form.Label>
             <Form.Control
               value={jobData.description}
-              onChange={(e) => setJobData({ ...jobData, job: e.target.value })}
+              onChange={(e) =>
+                setJobData({ ...jobData, description: e.target.value })
+              }
               type="text"
               id="description"
               placeholder="Enter Description of Job"
@@ -131,7 +156,7 @@ const NewJob = () => {
           </Form.Group>
 
           {/* ADDITIONAL */}
-          {/*           <Form.Group class="mt-2">
+          {/*           <Form.Group className="mt-2">
             <Form.Label htmlFor="additional">
               Additional Information:
             </Form.Label>

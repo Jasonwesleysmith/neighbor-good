@@ -18,22 +18,14 @@ function Dashboard() {
       <h1>Neighborhood Jobs Dashboard</h1>
 
       <CardGroup>
-        <Card
-          style={{ width: '18rem' }}
-          class="shadow-lg"
-          className="card-background"
-        >
+        <Card style={{ width: '18rem' }} className="card-background shadow-lg">
           <div>
             <h2 className="title">Post a new job:</h2>
             <Button onClick={() => navigate('/job')}>New Job</Button>
           </div>
         </Card>
         <div></div>
-        <Card
-          style={{ width: '18rem' }}
-          class="shadow-lg"
-          className="card-background"
-        >
+        <Card style={{ width: '18rem' }} className="card-background shadow-lg">
           <div>
             <h2 className="title">View all jobs:</h2>
             <Button onClick={() => navigate('/unclaimedjobs')}>

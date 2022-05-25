@@ -9,7 +9,8 @@ const typeDefs = gql`
   }
 
   type Job {
-    _id: String
+    _id: ID
+    job: String
     pay: String
     date: String
     time: String
@@ -31,13 +32,14 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
-    jobs(username: String): [Job]
+    jobs: [Job]
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addJob(
+      job: String
       pay: String
       date: String
       time: String

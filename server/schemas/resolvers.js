@@ -17,14 +17,10 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
     // get jobs
-    jobs: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Job.find(params);
+    jobs: async (parent, args) => {
+      return Job.find();
     },
-    // get one job
-    jobs: async (parent, { _id }) => {
-      return Job.findOne({ _id });
-    },
+
     // get all users
     users: async () => {
       return User.find().select('-__v -password').populate('jobs');
@@ -61,19 +57,18 @@ const resolvers = {
     },
     addJob: async (parent, args, context) => {
       console.log(context.user);
+      console.log(args);
       if (context.user) {
-        const job = await Job.create({
+        // await User.findByIdAndUpdate(
+        //   { _id: context.user._id },
+        //   { $push: { jobs: job._id } },
+        //   { new: true }
+        // );
+
+        return await Job.create({
           ...args,
           username: context.user.username,
         });
-
-        await User.findByIdAndUpdate(
-          { _id: context.user._id },
-          { $push: { jobs: job._id } },
-          { new: true }
-        );
-
-        return job;
       }
 
       throw new AuthenticationError('You need to be logged in!');
