@@ -33,25 +33,22 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
 const App = () => {
   //api call
   return (
-    
-      <ApolloProvider client={client}>
-        <Router>
-          <Header />
-          <Routes>
-            <Route exact path="/" element={<Dashboard />} />
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/signup" element={<Signup />} />
-            <Route exact path="/job" element={<NewJob />} />
-            <Route exact path="/unclaimedjobs" element={<UnclaimedJobs />} />
-          </Routes>
-          {/* <Footer /> */}
-        </Router>
-      </ApolloProvider>
-    
+    <ApolloProvider client={client}>
+      <Router>
+        <Header />
+        <Routes>
+          <Route exact path="/" element={<Dashboard />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/job" element={<NewJob />} />
+          <Route exact path="/unclaimedjobs" element={<UnclaimedJobs />} />
+        </Routes>
+        {/* <Footer /> */}
+      </Router>
+    </ApolloProvider>
   );
 };
 

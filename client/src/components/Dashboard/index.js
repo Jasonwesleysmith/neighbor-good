@@ -36,11 +36,12 @@ function Dashboard() {
         >
           <div>
             <h2 className="title">View all jobs:</h2>
-            <Button onClick={() => navigate('/unclaimedjobs')}>Unclaimed Jobs</Button>
+            <Button onClick={() => navigate('/unclaimedjobs')}>
+              Unclaimed Jobs
+            </Button>
           </div>
         </Card>
       </CardGroup>
-
     </DashboardStyled>
   );
 }

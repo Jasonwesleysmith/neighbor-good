@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model } = require('mongoose');
 
 const jobSchema = new Schema({
   pay: {
@@ -40,6 +40,6 @@ const jobSchema = new Schema({
   },
 });
 
-const Job = model("Job", jobSchema);
+const Job = model('Job', jobSchema);
 
 module.exports = Job;

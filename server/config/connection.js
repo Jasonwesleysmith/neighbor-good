@@ -1,14 +1,12 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/neighbor-good",
+  process.env.MONGODB_URI || 'mongodb://localhost/neighbor-good',
   {
-    /*
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false,
-    */
   }
 );
 
