@@ -110,7 +110,6 @@ const LoginForm = () => {
               disabled={!(userFormData.email && userFormData.password)}
               type="submit"
               variant="success"
-              onClick={() => navigate('/dashboard')}
             >
               Submit
             </Button>

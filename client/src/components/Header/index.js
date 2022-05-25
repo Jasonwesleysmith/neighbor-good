@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import Auth from '../../utils/auth';
 
 const AppNavbar = () => {
+  console.log(Auth.loggedIn());
   return (
     <>
       <HeaderStyled>
