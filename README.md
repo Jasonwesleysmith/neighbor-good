@@ -1,5 +1,7 @@
 # Neighbor:Good
 
+## Description:  Neighbor:Good is an app for good neighbors.  It allows the user to post a job of any kind they need to fullfill and also allows users to fullfill posted job requests.  One user account allows for both functionalities.
+
 ## User Story
 
 ### AS A RESIDENT & NEIGHBOR of a large neighborhood
