@@ -21,6 +21,8 @@ const typeDefs = gql`
     description: String
     additionalInfo: String
     username: String
+    claimed: Boolean
+    claimedBy: User
   }
 
   type Auth {
@@ -52,6 +54,22 @@ const typeDefs = gql`
       additionalInfo: String
       username: String!
     ): Job
+    updateJob(
+      _id: ID
+      job: String
+      pay: String
+      date: String
+      time: String
+      createdAt: String
+      name: String
+      phoneNumber: String
+      location: String
+      description: String
+      additionalInfo: String
+      username: String
+      claimed: Boolean
+      claimedBy: ID
+    ) : Job
   }
 `;
 

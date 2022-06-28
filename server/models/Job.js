@@ -42,6 +42,14 @@ const jobSchema = new Schema({
     type: String,
     required: true,
   },
+  claimed: {
+    type: Boolean,
+    default: false,
+  },
+  claimedBy: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  }
 });
 
 const Job = model('Job', jobSchema);

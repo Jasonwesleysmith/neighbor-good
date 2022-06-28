@@ -80,6 +80,12 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
+    updateJob: async (parent, args, context) => {
+      return await Job.findByIdAndUpdate(
+        {_id: args._id},
+        args, {new:true}
+      ).populate("claimedBy")
+    }
   },
 };
 
