@@ -55,6 +55,13 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+
+    updateUser: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOneAndUpdate({username:context.user.username},args,{new:true}).populate("jobs")
+      }
+    },
+
     addJob: async (parent, args, context) => {
       console.log(context.user);
       console.log(args);
@@ -73,6 +80,12 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
+    updateJob: async (parent, args, context) => {
+      return await Job.findByIdAndUpdate(
+        {_id: args._id},
+        args, {new:true}
+      ).populate("claimedBy")
+    }
   },
 };
 
